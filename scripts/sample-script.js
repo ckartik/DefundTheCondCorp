@@ -19,7 +19,7 @@ async function main() {
 
   await dao.deployed();
 
-  console.log("Dao deployed to:", greeter.address);
+  console.log("Dao deployed to:", dao.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
