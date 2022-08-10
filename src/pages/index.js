@@ -1,5 +1,5 @@
 function HomePage() {
-    return <div>DefundTheCondCorp</div>
-  }
-  
-  export default HomePage
+  return <div>DEFUNDTHECONDCORP</div>
+}
+
+export default HomePage
