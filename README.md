@@ -24,8 +24,14 @@ Condo Corporations and HOA's are corrupt, and waste your money. Most people assu
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
 
 ## 📈 Contributors
-~ ckartik
-~ zKJET
+ckartik<br>
+<a href="https://github.com/ckartik">
+  <img src="https://github.com/ckartik.png?size=50">
+</a><br>
+zKJΞT<br>
+<a href="https://github.com/zkjet">
+  <img src="https://github.com/zkjet.png?size=50">
+</a>
 
 # 🏄‍♂️ Quick Start
 
