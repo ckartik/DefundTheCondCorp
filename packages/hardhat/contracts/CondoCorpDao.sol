@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract CondoCorpDao {
-    constructor() payable {
-    }
+    constructor() payable {}
+
     enum VoteType {
         YAY,
         NAY
@@ -15,18 +15,14 @@ contract CondoCorpDao {
         VendorAdd,
         VendorRemove
     }
-    
+
     struct Proposal {
         address targetAdr;
         uint256 deadline;
-
         uint256 yayVotes;
         uint256 nayVotes;
-
         bool executed;
-
         ProposalType proposalType;
-
         mapping(address => bool) voters;
     }
 
@@ -42,15 +38,15 @@ contract CondoCorpDao {
     mapping(address => bool) public vendors;
     uint256 numProposals;
 
-
     function joinDAO() external {
         members[msg.sender] = true;
     }
 
-    function createProposal(address targetAdr, ProposalType proposalType) 
-    external
-    MemberOnly
-    returns (uint256) {
+    function createProposal(address targetAdr, ProposalType proposalType)
+        external
+        MemberOnly
+        returns (uint256)
+    {
         if (proposalType == ProposalType.BODAdd) {
             require(boardMembers[targetAdr] == false, "ALREADY_BOARD_MEMBER");
         }
@@ -99,4 +95,4 @@ contract CondoCorpDao {
             delete vendors[proposal.targetAdr];
         }
     }
-}   
+}
