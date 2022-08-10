@@ -69,7 +69,8 @@ contract CondoCorpDao {
     }
 
     enum ProposalType {
-        BODChange,
+        BODRemove,
+        BODAdd,
         VendorAdd,
         VendorRemove
     }
@@ -88,13 +89,28 @@ contract CondoCorpDao {
         mapping(address => bool) voters;
     }
 
+    modifier MemberOnly() {
+        require(members[msg.sender].lockedMembershipNFT.length > 0, "NOT_A_MEMBER");
+        _;
+    }
+
     struct Member {
         uint256 joinedAt;
-        uint256 lockedMembershipNFT;
+        uint256[] lockedMembershipNFT;
         uint256 memberID;
     }
 
     // Maps Proposal ID to a proposal
     mapping(uint256 => Proposal) public proposals;
     mapping(address => Member) public members;
+    address[] boardMembers;
+
+    function createProposal(uint256 _forTargetID, ProposalType proposalType) 
+    external
+    MemberOnly
+    returns (uint256) {
+        if (proposalType == ProposalType.BODRemove) {
+
+        }
+    }
 }   
