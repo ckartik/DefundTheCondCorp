@@ -52,9 +52,10 @@ interface IDaoMemberNFT {
 
 contract CondoCorpDao {
     IDaoMemberNFT daoMemberNFT;
-
+    uint256 memberIDCounter;
     constructor(address nftContract) payable {
         daoMemberNFT = IDaoMemberNFT(nftContract);
+        memberIDCounter = 0;
     }
 
     enum VendorContractProposal {
@@ -67,4 +68,33 @@ contract CondoCorpDao {
         NAY
     }
 
-}
+    enum ProposalType {
+        BODChange,
+        VendorAdd,
+        VendorRemove
+    }
+    
+    struct Proposal {
+        uint256 targetID;
+        uint256 deadline;
+
+        uint256 yayVotes;
+        uint256 nayVotes;
+
+        bool executed;
+
+        ProposalType proposalType;
+
+        mapping(address => bool) voters;
+    }
+
+    struct Member {
+        uint256 joinedAt;
+        uint256 lockedMembershipNFT;
+        uint256 memberID;
+    }
+
+    // Maps Proposal ID to a proposal
+    mapping(uint256 => Proposal) public proposals;
+    mapping(address => Member) public members;
+}   
