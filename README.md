@@ -27,18 +27,42 @@ Condo Corporations and HOA's are corrupt, and waste your money. Most people assu
 ~ ckartik
 ~ zKJET
 
-# Basic Sample Hardhat Project
+# 🏄‍♂️ Quick Start
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Prerequisites: [Node (v16 LTS)](https://nodejs.org/en/download/) plus [Yarn](https://classic.yarnpkg.com/en/docs/install/) and [Git](https://git-scm.com/downloads)
 
-Try running some of the following tasks:
+> clone/fork 🏗 scaffold-eth:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+```bash
+git clone https://github.com/scaffold-eth/scaffold-eth.git
 ```
+
+> install and start your 👷‍ Hardhat chain:
+
+```bash
+cd scaffold-eth
+yarn install
+yarn chain
+```
+
+> in a second terminal window, start your 📱 frontend:
+
+```bash
+cd scaffold-eth
+yarn start
+```
+
+> in a third terminal window, 🛰 deploy your contract:
+
+```bash
+cd scaffold-eth
+yarn deploy
+```
+
+🔏 Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
+
+📝 Edit your frontend `App.jsx` in `packages/react-app/src`
+
+💼 Edit your deployment scripts in `packages/hardhat/deploy`
+
+📱 Open http://localhost:3000 to see the app
